@@ -1,10 +1,10 @@
 """Application Models"""
 import bson, os
 import certifi
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 from pymongo import MongoClient
 
-load_dotenv('.env.local')
+load_dotenv(find_dotenv('.env.local'))
 
 client = MongoClient(os.getenv('MONGO_DB_URI'), tls=True, tlsCAFile=certifi.where())
 db = client.arbitrages

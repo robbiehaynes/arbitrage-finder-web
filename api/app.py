@@ -1,5 +1,5 @@
 import os
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 
 from flask import Flask, jsonify, request
 
@@ -8,7 +8,7 @@ from validator import Auth0JWTBearerTokenValidator
 
 from models import Arbitrage
 
-load_dotenv()
+load_dotenv(find_dotenv('.env.local'))
 
 require_auth = ResourceProtector()
 validator = Auth0JWTBearerTokenValidator(
