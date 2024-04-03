@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-const { createProxyMiddleware } = require('http-proxy-middleware');
+import { createProxyMiddleware } from 'http-proxy-middleware';
 
 const nextConfig = {
   rewrites: async () => {
