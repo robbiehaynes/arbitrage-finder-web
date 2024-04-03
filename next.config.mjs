@@ -3,6 +3,9 @@
 import { createProxyMiddleware } from 'http-proxy-middleware';
 
 const nextConfig = {
+  api: {
+    bodyParser: false,
+  },
   rewrites: async () => {
     return [
       {
